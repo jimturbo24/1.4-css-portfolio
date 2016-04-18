@@ -1,0 +1,329 @@
+
+/* Adapeted from https://www.christianheilmann.com/2015/04/08/keeping-it-simple-coding-a-carousel/ */
+html {
+  font-family: sans-serif;
+  /*background-color: blue;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url(../assets/bg.jpg);
+}
+body {
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+.wrapper{
+  width: 1024px;
+  margin: 0 auto;
+}
+.grid__row {
+  /* Hack for display: inline-block
+     - removing default space between elements*/
+  font-size: 0;
+  margin-top: 20px;
+}
+.grid__col {
+  font-size: 12px;
+}
+.boxShadow {
+  box-shadow: 0px 4px 0px rgba(204, 204, 204, 0.5);
+}
+.navBar::before {
+    content: "-";
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+}
+.navBar::after {
+    content: "-";
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+}
+.navBar {
+  display: inline-block;
+  width: 248px;
+  height: 30px;
+  text-align:center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+  padding-top: 10px;
+  background-color: rgb(180, 41, 46);
+}
+.navBar:nth-child(4) {
+  margin-right: 0;
+}
+.topSocial {
+  display:block;
+  text-align:right;
+  font-size: 0px;
+}
+.topSocial__item {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+}
+.topSocial__item:nth-child(4) {
+  margin-right: 0;
+}
+.navBar__row{
+  font-size: 0;
+}
+/*the section below is the code for the carousel block*/
+.carousel {
+  width: 1004px;
+  height: 357px;
+  margin: 21px 0px;
+  border: 10px solid rgb(255, 255, 255);
+  overflow: hidden;
+}
+.carousel__content {
+  margin: 0;
+  padding: 0;
+  margin-top: 0px;
+}
+.carousel__content li{
+  list-style-type:none
+}
+.carousel__content img{
+  position: relative;
+  right: 160px;
+  bottom: 135px;
+}
+.button:checked {
+  margin-left: 465px;
+  border: none;
+  color: red;
+}
+/*the section below is the code for the articles block*/
+.articleSec{
+  margin-top: 26px;
+  /*width: 1024px;*/
+  /*height: 350px;*/
+}
+.listicle {
+  display: inline-block;
+  width: 284px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+  vertical-align: text-top;
+margin-right: 6px;
+}
+
+.listicle:nth-child(3) {
+  margin-right: 0;
+}
+.listicle__title {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 300;
+  margin: 0px 0px 14px 0px;
+}
+.listicle__date {
+  display: inline-block;
+  color: rgba(190,190,190,1);
+  font-size: 14px;
+}
+.listicle__summary {
+  color: rgba(85,85,85,1);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.listicle__link {
+  text-align: center;
+  color: rgb(167, 40, 40);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  bottom: -5px;
+  left: 90px;
+}
+/*the section below is the code for the skater images*/
+/*adapted from: http://stackoverflow.com/questions/8708945/how-to-position-text-over-an-image-in-css*/
+.skaters{
+  /*width: 1024px;*/
+  height: 477px;
+  font-size: 0;
+  margin-top: 40px;
+}
+.skater__lance {
+  height: 212px;
+  width: 314px;
+  position: relative;
+  border: 10px solid rgb(255, 255, 255);
+  margin-right: 11px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.skater__lance--image {
+  float: right;
+}
+.skater__lance--text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 44px;
+  font-weight: 800;
+  top: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.skater__rodney {
+  height: 212px;
+  width: 314px;
+  position: relative;
+  margin-right: 11px;
+  border: 10px solid rgb(255, 255, 255);
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.skater__rodney--image {
+  float: left;;
+}
+.skater__rodney--text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 44px;
+  font-weight: 800;
+  top: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.skater__tommy {
+  height: 454px;
+  width: 314px;
+  position: relative;
+  border: 10px solid rgb(255, 255, 255);
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.skater__tommy--image {
+  position: absolute;
+  right: -110px;
+}
+.skater__tommy--text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 44px;
+  font-weight: 800;
+  top: 135px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.skater__steve {
+  height: 212px;
+  width: 659px;
+  position: relative;
+  border: 10px solid rgb(255, 255, 255);
+  overflow: hidden;
+  bottom: 232px;
+}
+.skater__steve--image {
+  position: absolute;
+  bottom: -50px;
+}
+.skater__steve--text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-size: 44px;
+  font-weight: 800;
+  top: 30px;
+  left: 120px;
+  text-transform: uppercase;
+}
+/*the section below is the code for the skateboard images*/
+.skateBoards{
+  /*width: 1024px;*/
+  /*height: 295px;*/
+  font-size: 0;
+  margin-top: 31px;
+  background-color: rgb(255, 255, 255);
+}
+.skateBoard {
+  height: 260px;
+  width: 63px;
+  margin: 16px 19px;
+}
+/*the section below is the code for the contact information block*/
+.contactInfo{
+  /*width: 1024px;*/
+  height: 361px;
+  margin-top: 35px;
+  background-color: rgb(255, 255, 255);
+}
+.contactInfo__title{
+  text-transform: capitalize;
+  padding-top: 30px;
+  padding-left: 30px;
+  width: 50%;
+  font-size: 31px;
+  font-weight: 400;
+  margin: 0px;
+  color: rgb(55,55,50);
+}
+.contactInfo__text{
+  width: 60%;
+  padding-top: 10px;
+  padding-left: 30px;
+  margin: 0px;
+  line-height: 2;
+  font-size: 18px;
+  color: rgb(83,83,83);
+}
+.form{
+  position: relative;
+  width: 35%;
+  left: 644px;
+  bottom: 261px;
+}
+.contactInfo__social{
+  display: block;
+  font-size: 0px;
+  width: 200px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.contactInfo__social--button{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+.greyscale{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+/*form information adapted from http://www.w3schools.com/css/tryit.asp?filename=trycss_forms*/
+.form__input {
+  width: 100%;
+  padding: 9px;
+  margin: 25px 0;
+  display: block;
+  border: 1px solid rgba(150, 150, 150, 0.5);
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-top: 4px solid rgba(150, 150, 150, 0.5);
+  border-left: 4px solid rgba(150, 150, 150, 0.5);
+}
+.form__submit {
+  width: 60%;
+  background-color: rgba(180, 41, 46, 1);
+  color: white;
+  padding: 9px 0px;
+  margin: -9px 0px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+}
